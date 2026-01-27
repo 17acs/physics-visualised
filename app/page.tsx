@@ -3,7 +3,7 @@ export default function Home() {
     <main style={{ padding: 32, fontFamily: "system-ui" }}>
       <h1 style={{ fontSize: 40, marginBottom: 8 }}>physics visualised</h1>
      <p style={{ fontSize: 18, maxWidth: 700, textIndent: 20 }}>
-  personal portfolio by will king
+  by will king
 </p>
 
 <p style={{ fontSize: 18, maxWidth: 700, textIndent: 20, marginTop: 0 }}>
