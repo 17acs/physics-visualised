@@ -361,11 +361,18 @@ const waveOffsets = useMemo(() => {
 
 export default function Photoelectric3D(props: Params) {
  return (
-  <div className="card" style={{ height: 620, overflow: "hidden" }}>
-    <Canvas camera={{ position: [6.5, 4.8, 7.5], fov: 45, near: 0.1, far: 200 }}>
+  <div
+    className="card"
+    style={{ height: "clamp(300px, 55vh, 620px)", overflow: "hidden" }}
+  >
+    <Canvas
+      style={{ width: "100%", height: "100%" }}
+      camera={{ position: [6.5, 4.8, 7.5], fov: 45, near: 0.1, far: 200 }}
+    >
       <Scene {...props} />
     </Canvas>
   </div>
 );
+
 
 }

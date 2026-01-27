@@ -41,7 +41,8 @@ export default function PhotoelectricPage() {
   }, [fHz, phiJ, intensity]);
 
   return (
-    <main style={{ padding: 32, fontFamily: "system-ui", maxWidth: 1500, margin: "0 auto" }}>
+    <main className="page" style={{ maxWidth: 1500 }}>
+
       <a href="/topics/modern" style={{ textDecoration: "none" }}>
         ← Back to Modern
       </a>
@@ -52,85 +53,77 @@ export default function PhotoelectricPage() {
         threshold frequency), not their max energy, since photon energy is dependent on hf. intensity is just the <b>amount</b> of photons not their energies.
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) 560px",
-          gap: 16,
-          alignItems: "start",
-          marginTop: 16,
-        }}
-      >
+      <div className="topicGrid" style={{ ["--aside" as any]: "560px" }}>
+
         {/* LEFT */}
-        <div>
-          <Photoelectric3D intensity={intensity} fHz={fHz} emits={model.emits} kmaxEv={model.kmaxEv} />
-        </div>
+        {/* LEFT: graphs + controls + readout */}
+<div style={{ display: "grid", gap: 12 }}>
+  <MiniGraph fHz={fHz} phiJ={phiJ} />
 
-        {/* RIGHT (NEAT STACK) */}
-        <div style={{ position: "sticky", top: 16, alignSelf: "start", display: "grid", gap: 12 }}>
-          {/* BIG GRAPH TOP RIGHT (no overlap because it's its own row) */}
-          <MiniGraph fHz={fHz} phiJ={phiJ} />
+  <div className="card" style={{ padding: 14 }}>
+    <div style={{ fontWeight: 700, marginBottom: 10 }}>Controls</div>
 
-          <div className="card" style={{ padding: 14 }}>
-            <div style={{ fontWeight: 700, marginBottom: 10 }}>Controls</div>
+    <Control
+      label="Frequency f (×10¹⁴ Hz)"
+      value={f14}
+      min={0}
+      max={12}
+      step={0.1}
+      onChange={setF14}
+    />
+    <Control
+      label="Intensity"
+      value={intensity}
+      min={0}
+      max={100}
+      step={1}
+      onChange={setIntensity}
+    />
+    <Control
+      label="Work function φ (eV)"
+      value={phiEv}
+      min={1.5}
+      max={5.5}
+      step={0.05}
+      onChange={setPhiEv}
+    />
+  </div>
 
-            <Control
-              label="Frequency f (×10¹⁴ Hz)"
-              value={f14}
-              min={0}
-              max={12}
-              step={0.1}
-              onChange={setF14}
-            />
-            <Control
-              label="Intensity"
-              value={intensity}
-              min={0}
-              max={100}
-              step={1}
-              onChange={setIntensity}
-            />
-            <Control
-              label="Work function φ (eV)"
-              value={phiEv}
-              min={1.5}
-              max={5.5}
-              step={0.05}
-              onChange={setPhiEv}
-            />
-          </div>
+  <div className="card" style={{ padding: 14 }}>
+    <div style={{ fontWeight: 700, marginBottom: 10 }}>Results</div>
 
-          <div className="card" style={{ padding: 14 }}>
-            <div style={{ fontWeight: 700, marginBottom: 10 }}>Readout</div>
+    <Row label="Threshold freq f₀" value={`${formatSci(f0)} Hz`} />
+    <Row label="Emission?" value={model.emits ? "yes" : "no"} />
 
-            <Row label="Threshold freq f₀" value={`${formatSci(f0)} Hz`} />
-            <Row label="Emission?" value={model.emits ? "yes" : "no"} />
+    <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
 
-            <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
+    <Row label="Photon energy (hf)" value={`${formatSci(model.photonE)} J`} />
+    <Row label="Work function (φ)" value={`${phiEv.toFixed(2)} eV`} />
 
-            <Row label="Photon energy (hf)" value={`${formatSci(model.photonE)} J`} />
-            <Row label="Work function (φ)" value={`${phiEv.toFixed(2)} eV`} />
+    <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
 
-            <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
+    <Row label="Ekmax" value={`${model.kmaxEv.toFixed(3)} eV`} />
+    <Row label="Stopping potential" value={`${model.vs.toFixed(3)} V`} />
+    <Row label="Electron rate " value={model.rate === 0 ? "0" : `${Math.round(model.rate * 100)}%`} />
 
-            <Row label="Ekmax" value={`${model.kmaxEv.toFixed(3)} eV`} />
-            <Row label="Stopping potential Vs" value={`${model.vs.toFixed(3)} V`} />
-            <Row label="Electron rate (qual.)" value={model.rate === 0 ? "0" : `${Math.round(model.rate * 100)}%`} />
+    <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
 
-            <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
+    <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 13, lineHeight: 1.6 }}>
+      <div><b>Equations</b></div>
+      <div>E = hf</div>
+      <div>hf ≥ φ</div>
+      <div>Ekmax = hf − φ</div>
+      <div>eVs = Ekmax</div>
+      <div>f₀ = φ / h</div>
+    </div>
+  </div>
+</div>
 
-            <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 13, lineHeight: 1.6 }}>
-              <div>
-                <b>Equations</b>
-              </div>
-              <div>E = hf</div>
-              <div>hf ≥ φ</div>
-              <div>Ekmax = hf − φ</div>
-              <div>eVs = Ekmax</div>
-              <div>f₀ = φ / h</div>
-            </div>
-          </div>
-        </div>
+{/* RIGHT: 3D (sticky on desktop) */}
+<div className="stickyCol">
+  <Photoelectric3D intensity={intensity} fHz={fHz} emits={model.emits} kmaxEv={model.kmaxEv} />
+</div>
+
       </div>
     </main>
   );
@@ -197,7 +190,19 @@ function Row({ label, value }: { label: string; value: string }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-between", gap: 12, padding: "6px 0" }}>
       <div style={{ fontWeight: 700 }}>{label}</div>
-      <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}>{value}</div>
+      <div
+  style={{
+    fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+    whiteSpace: "nowrap",
+    overflowX: "auto",
+    maxWidth: "65%",
+    textAlign: "right",
+    minWidth: 0,
+  }}
+>
+  {value}
+</div>
+
     </div>
   );
 }
@@ -234,13 +239,15 @@ function MiniGraph({ fHz, phiJ }: { fHz: number; phiJ: number }) {
   const f0x = xToPx(clamp(f0, fMin, fMax));
 
   return (
-    <div className="card" style={{ padding: 14, justifySelf: "end" }}>
+    <div className="card" style={{ padding: 14 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
         <div style={{ fontWeight: 700 }}>Ekmax vs frequency</div>
         <div style={{ opacity: 0.7, fontSize: 12 }}>threshold marked</div>
       </div>
 
-      <svg width={W} height={H} style={{ width: "100%", height: "auto", display: "block", overflow: "visible" }}>
+      <div className="graphBox" style={{ ["--ratio" as any]: `${W}/${H}` }}>
+  <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
+
         {/* axes */}
         <line x1={pad} y1={H - pad} x2={W - pad} y2={H - pad} stroke="white" strokeOpacity="0.75" />
         <line x1={pad} y1={pad} x2={pad} y2={H - pad} stroke="white" strokeOpacity="0.75" />
@@ -261,7 +268,9 @@ function MiniGraph({ fHz, phiJ }: { fHz: number; phiJ: number }) {
         <text x={10} y={pad} textAnchor="start" fontSize="12" fill="rgba(242,245,255,0.75)">
           Ekmax (eV)
         </text>
-      </svg>
+        </svg>
+</div>
+
     </div>
   );
 }

@@ -6,11 +6,22 @@ export default function Home() {
   by will king
 </p>
 
-<p style={{ fontSize: 18, maxWidth: 700, textIndent: 20, marginTop: 0 }}>
-  big wip yh... music feature soon anyone??
+<p style={{ fontSize: 18, maxWidth: 700, paddingLeft: 20, marginTop: 0 }}>
+  WIP. Some aspects of the 3D modelling has used AI to code. The rest of the website   is self taught via youtube and google. See <a href="/about"><span style={{ textDecoration: "underline" }}>about</span></a> for more.
 </p>
 
+<section style={{ marginTop:28}}>
+  <div className="card" style={{ padding:16}}>
+    <h2 style={{ marginTop:0, marginBottom: 10}}>Updates</h2>
 
+    <ul style={{ margin: 0, paddingLeft: 18, opacity: 0.85, lineHeight: 1.7 }}>
+      <li><b>27 Jan:</b></li>
+      <li>Should be more compatable for devices with different screens e.g. mobile and laptops</li>
+      <li>Inverse Square Law research project added</li>
+      <li>Work has began on Phase Difference modelling</li>
+    </ul>
+  </div>
+</section>
       <div style={{ marginTop: 24, display: "flex", gap: 12 }}>
         <a
           href="/topics"

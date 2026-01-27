@@ -27,7 +27,7 @@ export default function ModernPage() {
             Photoelectric effect
           </div>
           <div style={{ opacity: 0.8 }}>
-            Threshold frequency, stopping potential, and Ekmax vs frequency. Certified Einstein classic.
+            Certified Einstein classic. 
           </div>
         </a>
       </div>

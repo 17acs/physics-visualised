@@ -32,7 +32,7 @@ export default function MechanicsPage() {
             Projectile motion
           </div>
           <div style={{ opacity: 0.8 }}>
-            Sliders + trajectory + SUVAT (x and y components)
+            This should help with your three-pointers
           </div>
         </a>
       </div>

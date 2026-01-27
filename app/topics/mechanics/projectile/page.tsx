@@ -12,7 +12,7 @@ export default function ProjectilePage() {
   const [speed, setSpeed] = useState(20); // m/s
   const [angleDeg, setAngleDeg] = useState(45); // degrees
   const [time, setTime] = useState(0); // seconds
-  const [autoScale, setAutoScale] = useState(false); // false = locked scale (recommended)
+  const [autoScale, setAutoScale] = useState(true);
 
 
   const data = useMemo(() => {
@@ -107,25 +107,18 @@ const yTicks = niceTicks(yMax, 5);
   const dotY = H - pad - data.y * sy;
 
   return (
-  <main style={{ padding: 32, fontFamily: "system-ui", maxWidth: 1400 }}>
+  <main className="page" style={{ maxWidth: 1400 }}>
     <a href="/topics/mechanics" style={{ textDecoration: "none" }}>
       ← Back to Mechanics
     </a>
 
     <h1 style={{ fontSize: 34, margin: "12px 0 6px" }}>Projectile Motion</h1>
     <p style={{ marginTop: 0, opacity: 0.8 }}>
-      Split motion into components: <b>x</b> has <b>a = 0</b>, <b>y</b> has <b>a = −g</b>.
+       Model of throwing objects. Constant acceleration so negligible air resistance and external forces.
     </p>
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "minmax(0, 1fr) 650px",
-        gap: 16,
-        alignItems: "start",
-        marginTop: 16,
-      }}
-    >
+    <div className="topicGrid" style={{ ["--aside" as any]: "650px" }}>
+
       <div>
 
 
@@ -189,7 +182,9 @@ const yTicks = niceTicks(yMax, 5);
         }}
       >
         <div style={{ fontWeight: 700, marginBottom: 8 }}>Trajectory</div>
-        <svg width={W} height={H} style={{ width: "100%", height: "auto", display: "block" }}>
+        <div className="graphBox" style={{ ["--ratio" as any]: `${W}/${H}` }}>
+  <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
+
   {/* faint grid + tick labels */}
   {xTicks.map((tx) => {
     if (tx === 0) return null;
@@ -234,7 +229,9 @@ const yTicks = niceTicks(yMax, 5);
   <text x={10} y={pad} textAnchor="start" fontSize="12" fill="rgba(242,245,255,0.8)">
     y (m)
   </text>
-</svg>
+  </svg>
+</div>
+
 
         <div style={{ marginTop: 8, fontSize: 14, opacity: 0.85 }}>
           Range ≈ <b>{data.range.toFixed(2)} m</b> • Max height ≈{" "}
@@ -290,7 +287,7 @@ const yTicks = niceTicks(yMax, 5);
       </div>
           </div> {/* end LEFT column */}
 
-      <div style={{ position: "sticky", top: 16, marginTop: 14 }}>
+      <div className="stickyCol" style={{ marginTop: 14 }}>
         <Projectile3D
           points={data.points}
           ball={{ x: data.x, y: data.y }}
@@ -412,9 +409,19 @@ function Eq({ label, value }: { label: string; value: string }) {
       }}
     >
       <div style={{ fontWeight: 700 }}>{label}</div>
-      <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" }}>
-        {value}
-      </div>
+      <div
+  style={{
+    fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+    whiteSpace: "nowrap",
+    overflowX: "auto",
+    maxWidth: "65%",
+    textAlign: "right",
+    minWidth: 0,
+  }}
+>
+  {value}
+</div>
+
     </div>
   );
 }

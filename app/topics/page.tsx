@@ -1,15 +1,16 @@
 const topics = [
-  { slug: "mechanics", title: "Mechanics", desc: "Forces, motion, energy, momentum" },
-  { slug: "waves", title: "Waves", desc: "Superposition, standing waves, diffraction" },
-  { slug: "electricity", title: "Electricity", desc: "Circuits, fields, potential, capacitance" },
-  { slug: "fields", title: "Fields", desc: "Gravitational, electric, magnetic" },
-  { slug: "modern", title: "Modern Physics", desc: "Photoelectric effect, photons, quantum ideas" },
+  { slug: "mechanics", title: "Mechanics", desc: "I don't have a pun for this. Mechanics is too serious." },
+  { slug: "waves", title: "Waves", desc: "Thankfully this wave is easier than a Mexican wave." },
+  { slug: "electricity", title: "Electricity", desc: "This topic always shocks me. Seriously. It hurts." },
+  { slug: "fields", title: "Fields", desc: "No hay fever in this kind of field. Definitely tears tho." },
+  { slug: "modern", title: "Modern Physics", desc: "No pun for this one either. Any suggestions hmu" },
+  { slug: "nuclear", title: "Nuclear", desc: "Nuclear bombs will blow your mind. Quite literally."}
 ];
 
 
 export default function TopicsPage() {
   return (
-    <main style={{ padding: 32, fontFamily: "system-ui" }}>
+    <main className="page" style={{ maxWidth: 1100 }}>
       <a href="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: 12 }}>
   ← Back to Home
 </a>
@@ -20,11 +21,14 @@ export default function TopicsPage() {
           <a
             key={t.slug}
             href={`/topics/${t.slug}`}
-            style={{ border: "1px solid #ddd", borderRadius: 14, padding: 16, textDecoration: "none", color: "inherit" }}
+            className="card"
+            style={{ padding: 16, textDecoration: "none", color: "inherit", display: "block" }}
           >
-            <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{t.title}</div>
+            <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 6 }}>{t.title}</div>
             <div style={{ opacity: 0.8 }}>{t.desc}</div>
-          </a>
+            <div style={{ marginTop: 10, color: "var(--accent)" }}>Open →</div>
+</a>
+
         ))}
       </div>
     </main>
