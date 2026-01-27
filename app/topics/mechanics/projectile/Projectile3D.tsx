@@ -140,7 +140,7 @@ export default function Projectile3D(props: {
         overflow: "hidden",
       }}
     >
-      <div style={{ padding: 14, fontWeight: 700 }}>3D view</div>
+
       <div style={{ height: "calc(100% - 44px)" }}>
         <Canvas camera={{ position: camPos, fov: 45 }}>
           <Scene {...props} />

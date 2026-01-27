@@ -7,7 +7,7 @@ export default function Home() {
 </p>
 
 <p style={{ fontSize: 18, maxWidth: 700, textIndent: 20, marginTop: 0 }}>
-  science isn't as boring as you think
+  big wip yh... music feature soon anyone??
 </p>
 
 
