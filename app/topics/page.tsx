@@ -1,10 +1,10 @@
 const topics = [
-  { slug: "mechanics", title: "Mechanics", desc: "I don't have a pun for this. Mechanics is too serious." },
-  { slug: "waves", title: "Waves", desc: "Thankfully this wave is easier than a Mexican wave." },
-  { slug: "electricity", title: "Electricity", desc: "This topic always shocks me. Seriously. It hurts." },
-  { slug: "fields", title: "Fields", desc: "No hay fever in this kind of field. Definitely tears tho." },
-  { slug: "modern", title: "Modern Physics", desc: "No pun for this one either. Any suggestions hmu" },
-  { slug: "nuclear", title: "Nuclear", desc: "Nuclear bombs will blow your mind. Quite literally."}
+  { slug: "mechanics", title: "Mechanics", desc: "" },
+  { slug: "waves", title: "Waves", desc: "" },
+  { slug: "electricity", title: "Electricity", desc: "T" },
+  { slug: "fields", title: "Fields", desc: "" },
+  { slug: "modern", title: "Modern Physics", desc: "" },
+  { slug: "nuclear", title: "Nuclear", desc: ""}
 ];
 
 
