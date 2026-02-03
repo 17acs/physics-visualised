@@ -272,16 +272,16 @@ const yTicks = niceTicks(yMax, 5);
             }}
           >
             <div>
-              <b>x-direction</b> (a = 0)
+              <b>verticals:</b> (a = 0)
             </div>
-            <div> s = ut + ½at² → x = uₓ t</div>
-            <div> v = u + at → vₓ = uₓ</div>
+            <div> s = ut + ½at²</div>
+            <div> v = u + at</div>
             <div style={{ marginTop: 10 }}>
-              <b>y-direction</b> (a = −g)
+              <b>horizontals:</b> (a = −g)
             </div>
-            <div> s = ut + ½at² → y = uᵧ t − ½ g t²</div>
-            <div> v = u + at → vᵧ = uᵧ − g t</div>
-            <div> v² = u² + 2as → vᵧ² = uᵧ² − 2g y</div>
+            <div> s = ut + ½at²</div>
+            <div> v = u + at</div>
+            <div> v² = u² + 2as</div>
           </div>
         </Box>
       </div>

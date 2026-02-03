@@ -15,10 +15,10 @@ export default function Home() {
     <h2 style={{ marginTop:0, marginBottom: 10}}>Updates</h2>
 
     <ul style={{ margin: 0, paddingLeft: 18, opacity: 0.85, lineHeight: 1.7 }}>
-      <li><b>27 Jan:</b></li>
+      <li><b>3 Feb:</b></li>
       <li>Should be more compatable for devices with different screens e.g. mobile and laptops</li>
       <li>Inverse Square Law research project added</li>
-      <li>Work has began on Phase Difference modelling</li>
+      <li>Phase difference and superposition model added.</li>
     </ul>
   </div>
 </section>
