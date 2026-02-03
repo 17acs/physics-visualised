@@ -16,19 +16,35 @@ export default function NuclearTopicPage() {
           marginTop: 18,
         }}
       >
-        <a
-          href="/topics/nuclear/inverse-square"
-          className="card"
-          style={{ padding: 16, display: "block" }}
-        >
-          <div style={{ fontWeight: 900, fontSize: 18 }}>
-            Inverse Square Law (γ)
-          </div>
-          <div style={{ opacity: 0.8, marginTop: 6 }}>
-            Research project
-          </div>
-          <div style={{ marginTop: 10, color: "var(--accent)" }}>Open →</div>
-        </a>
+       <div
+  className="card"
+  style={{
+    padding: 22,
+    display: "block",
+    borderRadius: 18,
+  }}
+>
+  <div style={{ fontWeight: 900, fontSize: 26, marginBottom: 6, }}>
+    Inverse Square Law (γ)
+  </div>
+
+  <div style={{ opacity: 0.8, fontSize: 18, marginBottom: 14 }}>
+    Research project
+  </div>
+
+  <a
+    href="/topics/nuclear/inverse-square"
+    style={{
+      display: "inline-block",
+      color: "var(--accent)",
+      fontWeight: 800,
+      textDecoration: "none",
+    }}
+  >
+    Open →
+  </a>
+</div>
+
       </div>
     </main>
   );
