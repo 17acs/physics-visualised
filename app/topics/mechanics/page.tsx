@@ -7,7 +7,7 @@ export default function MechanicsPage() {
 
       <h1 style={{ fontSize: 32, margin: "12px 0 8px" }}>Mechanics</h1>
       <p style={{ marginTop: 0, opacity: 0.8 }}>
-        Pick a simulation.
+        
       </p>
 
       <div
