@@ -12,8 +12,8 @@ export default function SuperpositionPage() {
 
       <h1 style={{ fontSize: 32, marginBottom: 8 }}>Superposition</h1>
       <p style={{ opacity: 0.85, marginBottom: 14 }}>
-        When two waves meet, the resultant displacement at a point is found by adding their
-        displacements. This is the <b>principle of superposition</b>.
+        When two waves meet, the resultant displacement at a point is given by adding their
+        displacements (remember displacement is vector). This is the <b>principle of superposition</b>.
       </p>
 
       <div className="card" style={{ padding: 16, marginBottom: 14 }}>
@@ -31,7 +31,7 @@ export default function SuperpositionPage() {
             <b>Wave 2</b>: amplitude of wave 2.
           </li>
           <li>
-            <b>Phase (φ)</b>: the phase difference — Controls the shift of wave 2 compared to wave 1. It is assumed you have a pretty decent understanding of phase difference already.
+            <b>Phase (φ)</b>: the phase difference — controls the shift of wave 2 compared to wave 1. It is assumed you have a pretty decent understanding of phase difference already.
           </li>
         </ul>
 
@@ -91,7 +91,7 @@ export default function SuperpositionPage() {
         <div style={{ marginTop: 14, lineHeight: 1.7, opacity: 0.92 }}>
           <h2 style={{ fontSize: 18, fontWeight: 900, marginBottom: 8 }}>Even further reading</h2>
           <p style={{ marginTop: 0, marginBottom: 0 }}>
-            Another thing I stumbled across was phasors, which seems to model waves using rotating vectors. I have not yet (03/02/26) explored it because my maths is lacking, but for the more developed reader, see: {" "}
+            Another thing I stumbled across was phasors, which seems to model waves using rotating vectors. I have not yet (03/02/26) explored it because my maths is lacking, but for the more developed reader, see {" "}
             <a
               href="https://en.wikipedia.org/wiki/Phasor"
               target="_blank"

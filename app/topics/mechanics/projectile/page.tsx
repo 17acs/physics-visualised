@@ -223,7 +223,7 @@ const yTicks = niceTicks(yMax, 5);
   <circle cx={dotX} cy={dotY} r="5" fill="#c1121f" stroke="white" strokeWidth="1.5" />
 
   {/* axis labels */}
-  <text x={W - pad} y={H - 8} textAnchor="end" fontSize="12" fill="rgba(242,245,255,0.8)">
+  <text x={W - pad} y={H - 0.01} textAnchor="end" fontSize="12" fill="rgba(242,245,255,0.8)">
     x (m)
   </text>
   <text x={10} y={pad} textAnchor="start" fontSize="12" fill="rgba(242,245,255,0.8)">
