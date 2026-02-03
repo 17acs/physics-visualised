@@ -249,21 +249,21 @@ const yTicks = niceTicks(yMax, 5);
           gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
         }}
       >
-        <Box title="Components (initial)">
-          <Eq label="uₓ" value={`${data.ux.toFixed(2)} m/s`} />
-          <Eq label="uᵧ" value={`${data.uy.toFixed(2)} m/s`} />
-          <Eq label="aₓ" value={`0 m/s²`} />
-          <Eq label="aᵧ" value={`−${g} m/s²`} />
+        <Box title="Initial components">
+          <Eq label="horizontal velocity" value={`${data.ux.toFixed(2)} m/s`} />
+          <Eq label="vertical velocity" value={`${data.uy.toFixed(2)} m/s`} />
+          <Eq label="horizontal acceleration" value={`0 m/s²`} />
+          <Eq label="vertical acceleration" value={`−${g} m/s²`} />
         </Box>
 
         <Box title={`At time t = ${data.t.toFixed(2)} s`}>
-          <Eq label="x" value={`${data.x.toFixed(2)} m`} />
-          <Eq label="y" value={`${data.y.toFixed(2)} m`} />
-          <Eq label="vₓ" value={`${data.vx.toFixed(2)} m/s`} />
-          <Eq label="vᵧ" value={`${data.vy.toFixed(2)} m/s`} />
+          <Eq label="horizontal distance" value={`${data.x.toFixed(2)} m`} />
+          <Eq label="vertical distance" value={`${data.y.toFixed(2)} m`} />
+          <Eq label="horizontal velocity" value={`${data.vx.toFixed(2)} m/s`} />
+          <Eq label="vertical velocity" value={`${data.vy.toFixed(2)} m/s`} />
         </Box>
 
-        <Box title="SUVAT used (with this setup)">
+        <Box title="SUVAT used">
           <div
             style={{
               fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
