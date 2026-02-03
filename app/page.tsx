@@ -1,15 +1,20 @@
 export default function Home() {
   const updates = [
-    {
-      date: "3 Feb",
-      items: [
-        "Improved compatibility for different screen sizes (mobile + laptops)",
-        "Inverse Square Law research project added",
-        "Phase difference and superposition model added",
-        "I am aware the topic homepages do not follow the same format and am working on a css fix",
-      ],
-    },
-  ];
+  {
+    date: "3 Feb",
+    items: [
+      "Phase difference and superposition model added",
+      "I am aware the topic homepages do not follow the same format and am working on a css fix",
+    ],
+  },
+  {
+    date: "27 Jan",
+    items: [
+      "Improved compatibility for different screen sizes (mobile + laptops)",
+      "Inverse Square Law research project added",
+    ],
+  },
+];
 
   return (
     <main
