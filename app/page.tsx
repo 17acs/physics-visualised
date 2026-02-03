@@ -6,6 +6,7 @@ export default function Home() {
         "Improved compatibility for different screen sizes (mobile + laptops)",
         "Inverse Square Law research project added",
         "Phase difference and superposition model added",
+        "I am aware the topic homepages do not follow the same format and am working on a css fix",
       ],
     },
   ];
