@@ -1,0 +1,102 @@
+/* Night-sky skin for everything under /topics/astrophysics/* */
+
+.astroSection{
+  min-height: 100vh;
+
+  background:
+    /* constellation overlay (Orion, Cassiopeia, Ursa Major, Scorpius-ish) */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1800' height='1100' viewBox='0 0 1800 1100'%3E%3Cdefs%3E%3ClinearGradient id='cg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='rgba(125,211,252,0.22)'/%3E%3Cstop offset='1' stop-color='rgba(167,139,250,0.18)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23cg)' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Orion (rough but recognisable): shoulders, belt, legs --%3E%3Cpath d='M320 220 L390 260 L455 245'/%3E%3Cpath d='M390 260 L410 330 L435 400'/%3E%3Cpath d='M410 330 L470 330 L525 335'/%3E%3Cpath d='M435 400 L400 510'/%3E%3Cpath d='M435 400 L485 520'/%3E%3Cpath d='M470 330 L455 245'/%3E%3C!-- Cassiopeia (W) --%3E%3Cpath d='M1220 220 L1285 260 L1345 225 L1410 280 L1475 240'/%3E%3C!-- Ursa Major (Big Dipper) --%3E%3Cpath d='M1180 520 L1245 500 L1315 525 L1370 565 L1410 625 L1335 640 L1260 610'/%3E%3C!-- Scorpius-ish curve --%3E%3Cpath d='M260 760 L310 720 L360 740 L410 705 L460 735 L510 715 L560 760 L610 820 L560 860'/%3E%3C/g%3E%3Cg fill='rgba(242,245,255,0.62)'%3E%3C!-- Orion stars --%3E%3Ccircle cx='320' cy='220' r='2.2'/%3E%3Ccircle cx='390' cy='260' r='2.1'/%3E%3Ccircle cx='455' cy='245' r='2.0'/%3E%3Ccircle cx='410' cy='330' r='2.0'/%3E%3Ccircle cx='470' cy='330' r='2.0'/%3E%3Ccircle cx='525' cy='335' r='1.9'/%3E%3Ccircle cx='435' cy='400' r='2.1'/%3E%3Ccircle cx='400' cy='510' r='2.0'/%3E%3Ccircle cx='485' cy='520' r='2.0'/%3E%3C!-- Cassiopeia --%3E%3Ccircle cx='1220' cy='220' r='2.0'/%3E%3Ccircle cx='1285' cy='260' r='2.0'/%3E%3Ccircle cx='1345' cy='225' r='2.0'/%3E%3Ccircle cx='1410' cy='280' r='2.0'/%3E%3Ccircle cx='1475' cy='240' r='2.0'/%3E%3C!-- Ursa Major --%3E%3Ccircle cx='1180' cy='520' r='2.0'/%3E%3Ccircle cx='1245' cy='500' r='2.0'/%3E%3Ccircle cx='1315' cy='525' r='2.0'/%3E%3Ccircle cx='1370' cy='565' r='2.0'/%3E%3Ccircle cx='1410' cy='625' r='2.0'/%3E%3Ccircle cx='1335' cy='640' r='2.0'/%3E%3Ccircle cx='1260' cy='610' r='2.0'/%3E%3C!-- Scorpius-ish --%3E%3Ccircle cx='260' cy='760' r='2.0'/%3E%3Ccircle cx='310' cy='720' r='2.0'/%3E%3Ccircle cx='360' cy='740' r='2.0'/%3E%3Ccircle cx='410' cy='705' r='2.0'/%3E%3Ccircle cx='460' cy='735' r='2.0'/%3E%3Ccircle cx='510' cy='715' r='2.0'/%3E%3Ccircle cx='560' cy='760' r='2.0'/%3E%3Ccircle cx='610' cy='820' r='2.0'/%3E%3Ccircle cx='560' cy='860' r='2.0'/%3E%3C/g%3E%3C/svg%3E"),
+
+    /* starfield layer 1 (lots of tiny stars) */
+    radial-gradient(circle at 6% 14%, rgba(255,255,255,0.35) 0 1px, transparent 2px),
+    radial-gradient(circle at 12% 58%, rgba(255,255,255,0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 32%, rgba(255,255,255,0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 80%, rgba(255,255,255,0.30) 0 1px, transparent 2px),
+    radial-gradient(circle at 29% 18%, rgba(255,255,255,0.24) 0 1px, transparent 2px),
+    radial-gradient(circle at 34% 44%, rgba(255,255,255,0.20) 0 1px, transparent 2px),
+    radial-gradient(circle at 41% 72%, rgba(255,255,255,0.26) 0 1px, transparent 2px),
+    radial-gradient(circle at 48% 22%, rgba(255,255,255,0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 56% 58%, rgba(255,255,255,0.24) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 36%, rgba(255,255,255,0.18) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 14%, rgba(255,255,255,0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 62%, rgba(255,255,255,0.30) 0 1px, transparent 2px),
+    radial-gradient(circle at 86% 28%, rgba(255,255,255,0.20) 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 74%, rgba(255,255,255,0.26) 0 1px, transparent 2px),
+
+    /* starfield layer 2 (bigger, rarer stars) */
+    radial-gradient(circle at 15% 22%, rgba(255,255,255,0.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 38% 20%, rgba(255,255,255,0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 67% 30%, rgba(255,255,255,0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 82% 18%, rgba(255,255,255,0.20) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 52%, rgba(255,255,255,0.16) 0 2px, transparent 3px),
+
+    /* Milky Way band (soft diagonal haze) */
+    radial-gradient(1200px 520px at 25% 20%, rgba(125,211,252,0.10), transparent 60%),
+    radial-gradient(1400px 620px at 70% 55%, rgba(167,139,250,0.10), transparent 60%),
+    linear-gradient(140deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.04) 35%, rgba(255,255,255,0.00) 70%),
+
+    /* base sky */
+    linear-gradient(180deg, #03040a, #05060a 45%, #070b14);
+
+  background-attachment: fixed;
+
+  /* scaled repeats so it feels less “patterned” */
+  background-size:
+    1800px 1100px,
+    420px 420px, 520px 520px, 480px 480px, 560px 560px, 500px 500px, 620px 620px, 540px 540px,
+    700px 700px, 640px 640px, 760px 760px, 680px 680px, 820px 820px, 740px 740px, 860px 860px,
+    1200px 1200px, 1300px 1300px, 1400px 1400px, 1500px 1500px, 1600px 1600px,
+    auto, auto, auto,
+    auto;
+
+  background-repeat:
+    repeat,
+    repeat, repeat, repeat, repeat, repeat, repeat, repeat,
+    repeat, repeat, repeat, repeat, repeat, repeat, repeat,
+    repeat, repeat, repeat, repeat, repeat,
+    no-repeat, no-repeat, no-repeat,
+    no-repeat;
+
+  background-position:
+    center top,
+    center, center, center, center, center, center, center,
+    center, center, center, center, center, center, center,
+    center, center, center, center, center,
+    center, center, center,
+    center;
+}
+
+/* KEY: make text blocks opaque so you never see constellations through them */
+.astroSection .card{
+  background: rgba(7, 11, 20, 0.95) !important;
+  border-color: rgba(255,255,255,0.14);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.60);
+}
+
+/* Astrophysics landing hero */
+.astroHeader{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background:
+    radial-gradient(900px 480px at 30% 15%, rgba(125,211,252,0.18), transparent 62%),
+    radial-gradient(900px 520px at 72% 8%, rgba(167,139,250,0.16), transparent 62%),
+    linear-gradient(180deg, rgba(7,11,20,0.96), rgba(7,11,20,0.92));
+  box-shadow: 0 26px 70px rgba(0,0,0,.65);
+  padding: 18px;
+}
+
+/* Random star canvas (goes behind everything) */
+.astroStars{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Content layer above canvas */
+.astroContent{
+  position: relative;
+  z-index: 1;
+}
