@@ -1,7 +1,7 @@
 const topics = [
   { slug: "mechanics", title: "Mechanics", desc: "" },
   { slug: "waves", title: "Waves", desc: "" },
-  { slug: "electricity", title: "Electricity", desc: "" },
+  { slug: "nuclear", title: "Nuclear", desc: "" },
 
   { slug: "modern", title: "Modern Physics", desc: "" },
   { slug: "astrophysics", title: "Astrophysics", desc: "" },

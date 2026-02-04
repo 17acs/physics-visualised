@@ -103,7 +103,7 @@ export default function RutherfordDiagram() {
           {/* labels */}
           <g style={textStyle}>
             <text x={110} y={150} fill="rgba(242,245,255,0.78)" fontSize="18">
-              α source / collimator
+              α source 
             </text>
           </g>
 
@@ -195,7 +195,7 @@ export default function RutherfordDiagram() {
           />
           <g style={textStyle}>
             <text x={300} y={nucleusY - 155} fill="rgba(242,245,255,0.78)" fontSize="18">
-              rare back-scatter
+              rare backwards deflection
             </text>
           </g>
 

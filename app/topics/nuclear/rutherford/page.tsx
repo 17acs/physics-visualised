@@ -15,15 +15,15 @@ export default function Page() {
         <div className="ruthHeroInner">
           <h1 className="ruthTitle">Rutherford α-Scattering</h1>
           <div className="ruthSub">
-            This is the experiment that basically forced the nuclear model. Most α particles go straight through the foil.
-            Some deflect slightly. A tiny fraction deflect massively (even backwards). That only makes sense if the atom is
-            mostly empty space with a very small, very concentrated positive nucleus.
+            Most α particles go straight through the foil.
+            Some deflect slightly. Even less deflect massively (over 90°). That works if the atom is
+            mostly empty space with a teeny tiny nucleus.
           </div>
 
           <div className="ruthChipRow">
             <div className="ruthChip"><span className="ruthDot" />most go straight</div>
             <div className="ruthChip"><span className="ruthDot" style={{ background: "var(--ruth-violet)" }} />some large angles</div>
-            <div className="ruthChip"><span className="ruthDot" style={{ background: "var(--ruth-cyan)" }} />rare backscatter</div>
+            <div className="ruthChip"><span className="ruthDot" style={{ background: "var(--ruth-cyan)" }} />rare backwards deflection</div>
           </div>
         </div>
       </div>
@@ -32,19 +32,17 @@ export default function Page() {
         {/* LEFT */}
         <div style={{ display: "grid", gap: 12 }}>
           <div className="ruthCard">
-            <div className="ruthSectionTitle">What you’re actually counting</div>
+            <div className="ruthSectionTitle">What Rutherford was actually counting</div>
             <p className="ruthP">
-              The detector is basically a screen where you see flashes when α particles hit. So the data isn’t “force” or
-              “field strength” — it’s just how often particles show up at certain angles.
+              The detector is basically a screen where you see flashes when α particles hit. It shows how often particles hit the screen and where they hit.
             </p>
             <p className="ruthP">
-              The headline result: large-angle scattering exists but is rare. That’s the bit that destroys any model where
-              positive charge is spread out.
+              He observed large scatterings every now and then, which couldn't be explained by previous models of the atom which did not have empty space.
             </p>
           </div>
 
           <div className="ruthCard">
-            <div className="ruthSectionTitle">The rough model for nuclear size</div>
+            <div className="ruthSectionTitle">How they used it to model the nucleus' size</div>
             <p className="ruthP">
               A big deflection happens only if the α passes close enough to or collides with the nucleus.
             </p>
