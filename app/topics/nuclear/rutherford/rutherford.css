@@ -1,0 +1,171 @@
+/* Rutherford page — scoped via .ruthWrap */
+
+.ruthWrap{
+  --ruth-amber:#fcd34d;
+  --ruth-violet:#a78bfa;
+  --ruth-cyan:#7dd3fc;
+}
+
+.ruthHero{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background:
+    radial-gradient(900px 420px at 18% 12%, rgba(252,211,77,.14), transparent 60%),
+    radial-gradient(900px 420px at 82% 10%, rgba(167,139,250,.13), transparent 60%),
+    radial-gradient(900px 560px at 50% 110%, rgba(125,211,252,.08), transparent 60%),
+    linear-gradient(180deg, rgba(5,6,10,0.55), rgba(11,10,22,0.75));
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+}
+
+.ruthHeroInner{ padding: 18px; }
+
+.ruthTitle{
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -0.02em;
+}
+
+.ruthSub{
+  margin-top: 10px;
+  max-width: 980px;
+  line-height: 1.65;
+  opacity: 0.87;
+  font-size: 16px;
+}
+
+.ruthChipRow{
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ruthChip{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.24);
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.ruthDot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--ruth-amber);
+  box-shadow: 0 0 10px rgba(252,211,77,0.35);
+}
+
+.ruthCard{
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.ruthSectionTitle{
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.ruthP{
+  margin: 0 0 10px;
+  line-height: 1.65;
+  opacity: 0.87;
+}
+
+.ruthEq{
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.28);
+  margin: 10px 0 14px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.ruthCallout{
+  border-left: 3px solid rgba(252,211,77,0.85);
+  background: rgba(252,211,77,0.06);
+  padding: 12px 12px;
+  border-radius: 12px;
+  opacity: 0.94;
+}
+
+.ruthSmall{
+  font-size: 13px;
+  opacity: 0.78;
+}
+
+/* Diagram block */
+.ruthDiagramWrap{
+  position: relative;
+  height: clamp(440px, 64vh, 820px);
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background:
+    radial-gradient(800px 440px at 25% 20%, rgba(125,211,252,.08), transparent 62%),
+    radial-gradient(900px 520px at 75% 10%, rgba(167,139,250,.10), transparent 62%),
+    radial-gradient(600px 420px at 55% 60%, rgba(252,211,77,.05), transparent 65%),
+    linear-gradient(180deg, rgba(5,6,10,0.38), rgba(5,6,10,0.62));
+}
+
+.ruthDiagramTop{
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+}
+
+.ruthDiagramTitle{
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.ruthBtn{
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.35);
+  color: rgba(242,245,255,0.9);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.ruthSvgBox{
+  position: absolute;
+  inset: 0;
+  padding-top: 52px; /* space for header */
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+.ruthSvg{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Fullscreen */
+.ruthDiagramWrap:fullscreen{
+  border-radius: 0;
+  border: 0;
+  background: linear-gradient(180deg, #05060a, #070b14);
+}

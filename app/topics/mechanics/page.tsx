@@ -1,40 +1,34 @@
 export default function MechanicsPage() {
+  const cards = [
+    {
+      title: "Projectile motion",
+      sub: "This should help with your three-pointers",
+      href: "/topics/mechanics/projectile",
+    },
+  ];
+
   return (
-    <main style={{ padding: 32, fontFamily: "system-ui", maxWidth: 900 }}>
-      <a href="/topics" style={{ textDecoration: "none" }}>
+    <main className="page">
+      <a href="/topics" className="backLink">
         ← Back to Topics
       </a>
 
-      <h1 style={{ fontSize: 32, margin: "12px 0 8px" }}>Mechanics</h1>
-      <p style={{ marginTop: 0, opacity: 0.8 }}>
-        
-      </p>
+      <div className="card topicHeader">
+        <h1 className="topicHeaderTitle">Mechanics</h1>
+        <div className="topicHeaderSub">
+          Models of motion.
+        </div>
+      </div>
 
-      <div
-        style={{
-          marginTop: 16,
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-          gap: 12,
-        }}
-      >
-        <a
-          href="/topics/mechanics/projectile"
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: 14,
-            padding: 16,
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>
-            Projectile motion
-          </div>
-          <div style={{ opacity: 0.8 }}>
-            This should help with your three-pointers
-          </div>
-        </a>
+      <div className="cardGrid">
+        {cards.map((c) => (
+          <a key={c.href} href={c.href} className="cardLink">
+            <div className="card">
+              <div className="cardTitle">{c.title}</div>
+              <div className="cardSub">{c.sub}</div>
+            </div>
+          </a>
+        ))}
       </div>
     </main>
   );

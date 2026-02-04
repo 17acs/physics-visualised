@@ -1,50 +1,39 @@
 export default function NuclearTopicPage() {
+  const cards = [
+    {
+      title: "Inverse Square Law (γ)",
+      sub: "Research project",
+      href: "/topics/nuclear/inverse-square",
+    },
+    {
+      title: "Rutherford Alpha-Scattering",
+      sub: "Derivation and the experiment",
+      href: "/topics/nuclear/rutherford",
+    },
+  ];
+
   return (
-    <main className="page" style={{ maxWidth: 1100 }}>
-      <a href="/topics">← Back to Topics</a>
+    <main className="page">
+      <a href="/topics" className="backLink">
+        ← Back to Topics
+      </a>
 
-      <h1 style={{ fontSize: 34, margin: "12px 0 6px" }}>Nuclear Physics</h1>
-      <p style={{ marginTop: 0, opacity: 0.8, maxWidth: 760 }}>
-        In case you enjoyed Oppenheimer and wanted to model your personality around it!
-      </p>
+      <div className="card topicHeader">
+        <h1 className="topicHeaderTitle">Nuclear Physics</h1>
+        <div className="topicHeaderSub">
+          In case you enjoyed Oppenheimer and wanted to model your personality around it.
+        </div>
+      </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: 14,
-          marginTop: 18,
-        }}
-      >
-       <div
-  className="card"
-  style={{
-    padding: 22,
-    display: "block",
-    borderRadius: 18,
-  }}
->
-  <div style={{ fontWeight: 900, fontSize: 26, marginBottom: 6, }}>
-    Inverse Square Law (γ)
-  </div>
-
-  <div style={{ opacity: 0.8, fontSize: 18, marginBottom: 14 }}>
-    Research project
-  </div>
-
-  <a
-    href="/topics/nuclear/inverse-square"
-    style={{
-      display: "inline-block",
-      color: "var(--accent)",
-      fontWeight: 800,
-      textDecoration: "none",
-    }}
-  >
-    Open →
-  </a>
-</div>
-
+      <div className="cardGrid">
+        {cards.map((c) => (
+          <a key={c.href} href={c.href} className="cardLink">
+            <div className="card">
+              <div className="cardTitle">{c.title}</div>
+              <div className="cardSub">{c.sub}</div>
+            </div>
+          </a>
+        ))}
       </div>
     </main>
   );

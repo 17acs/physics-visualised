@@ -98,3 +98,277 @@ a:hover{
   display: block;
 }
 
+/* ---------- common spacing + typography ---------- */
+:root{
+  --pad: 18px;
+  --pad-sm: 14px;
+  --radius: 14px;
+}
+
+.card{
+  padding: var(--pad);
+}
+
+@media (max-width: 640px){
+  .card{ padding: var(--pad-sm); }
+}
+
+.h1{
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+.h2{
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.p{
+  margin: 10px 0 0 0;
+}
+
+/* ---------- clickable card links ---------- */
+.cardLink{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cardLink:hover{
+  text-decoration: none; /* stop underline on hover */
+}
+
+.cardLink .card{
+  transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+}
+
+.cardLink:hover .card{
+  transform: translateY(-2px);
+  border-color: rgba(125,211,252,.22);
+  background: rgba(255,255,255,.05);
+}
+
+/* keyboard accessibility */
+.cardLink:focus-visible .card{
+  outline: 2px solid rgba(125,211,252,.55);
+  outline-offset: 3px;
+}
+
+/* ---------- small utility row ---------- */
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* --- about / generic prose --- */
+.prose{
+  max-width: 800px;
+}
+
+.prose p{
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.stack{
+  display: grid;
+  gap: 14px;
+}
+
+.backLink{
+  display: inline-block;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* --- topic homepage standard --- */
+.topicHeader{
+  padding: 18px;
+}
+
+.topicHeaderTitle{
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.topicHeaderSub{
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cardGrid{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 16px;
+}
+
+.cardTitle{
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.cardSub{
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+/* ---- Photoelectric page polish ---- */
+.heroText{
+  max-width: 980px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.sectionTitle{
+  font-weight: 900;
+  margin: 0 0 10px 0;
+}
+
+.cardPad{
+  padding: 14px;
+}
+
+.stack12{
+  display: grid;
+  gap: 12px;
+}
+
+.divider{
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 12px 0;
+}
+
+.control{
+  margin-bottom: 12px;
+}
+
+.controlLabel{
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.controlRow{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.range{
+  width: 100%;
+}
+
+.numInput{
+  width: 110px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.35);
+  color: var(--text);
+  outline: none;
+}
+
+.numInput:focus{
+  border-color: rgba(125,211,252,.35);
+  box-shadow: 0 0 0 3px rgba(125,211,252,.12);
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.rowLabel{
+  font-weight: 800;
+}
+
+.rowValue{
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+  overflow-x: auto;
+  max-width: 65%;
+  text-align: right;
+  min-width: 0;
+}
+
+.monoBlock{
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.graphHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.graphHint{
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+/* nicer canvas container */
+.canvasCard{
+  height: clamp(320px, 55vh, 640px);
+  overflow: hidden;
+  position: relative;
+}
+
+.canvasCard::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  border-radius: inherit;
+}
+.microWindow{
+  height: 220px;
+}
+
+@media (max-width: 900px){
+  .microWindow{ height: 200px; }
+}
+.backLink{
+  display:inline-block;
+  margin-bottom:12px;
+  text-decoration:none;
+}
+
+.topicHeader{ padding: 18px; margin-top: 12px; }
+.topicHeaderTitle{ margin:0; font-size:34px; }
+.heroText{ margin:10px 0 0; opacity:.85; max-width: 980px; line-height:1.6; font-size: 16px; }
+
+.stack12{ display:grid; gap:12px; }
+.cardPad{ padding:14px; }
+
+.sectionTitle{ font-weight:800; margin-bottom:10px; }
+.para{ margin: 0 0 10px; line-height:1.65; opacity:.88; }
+.eq{
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  margin: 10px 0 14px;
+  overflow-x: auto;
+  white-space: nowrap;
+}

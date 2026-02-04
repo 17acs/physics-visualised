@@ -1,35 +1,34 @@
 export default function WavesTopicPage() {
+  const cards = [
+    {
+      title: "Superposition",
+      sub: "Phase difference, interference, and resultant amplitude.",
+      href: "/topics/waves/superposition",
+    },
+  ];
+
   return (
-    <main className="page" style={{ maxWidth: 1100 }}>
-      <a
-        href="/topics"
-        style={{ textDecoration: "none", display: "inline-block", marginBottom: 12 }}
-      >
+    <main className="page">
+      <a href="/topics" className="backLink">
         ← Back to Topics
       </a>
 
-      <h1 style={{ fontSize: 32, marginBottom: 12 }}>Waves</h1>
+      <div className="card topicHeader">
+        <h1 className="topicHeaderTitle">Waves</h1>
+        <div className="topicHeaderSub">
+          Visual models for wave behaviour and how multiple waves combine.
+        </div>
+      </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: 12,
-        }}
-      >
-        <a
-          href="/topics/waves/superposition"
-          className="card"
-          style={{ padding: 16, textDecoration: "none", color: "inherit", display: "block" }}
-        >
-          <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 6 }}>
-            Superposition
-          </div>
-          <div style={{ opacity: 0.8 }}>
-            
-          </div>
-          <div style={{ marginTop: 10, color: "var(--accent)" }}>Open →</div>
-        </a>
+      <div className="cardGrid">
+        {cards.map((c) => (
+          <a key={c.href} href={c.href} className="cardLink">
+            <div className="card">
+              <div className="cardTitle">{c.title}</div>
+              <div className="cardSub">{c.sub}</div>
+            </div>
+          </a>
+        ))}
       </div>
     </main>
   );
