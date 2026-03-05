@@ -2,9 +2,9 @@ const topics = [
   { slug: "mechanics", title: "Mechanics", desc: "" },
   { slug: "waves", title: "Waves", desc: "" },
   { slug: "nuclear", title: "Nuclear", desc: "" },
-
   { slug: "modern", title: "Modern Physics", desc: "" },
   { slug: "astrophysics", title: "Astrophysics", desc: "" },
+  { slug: "mathematics", title: "Mathematics", desc: ""},
 ];
 
 
