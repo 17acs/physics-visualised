@@ -25,41 +25,12 @@ export default function Home() {
   ];
 
   return (
-    <main
-      className="page homeNoScroll"
-      style={{
-        boxSizing: "border-box",
-        minHeight: "100dvh",
-        paddingBottom: 0,
-      }}
-    >
+    <main className="page" style={{ minHeight: "100dvh", boxSizing: "border-box" }}>
+    
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         {/* HERO */}
         <header style={{ marginBottom: 18 }}>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              padding: "6px 10px",
-              borderRadius: 999,
-              border: "1px solid rgba(255,255,255,0.14)",
-              background: "rgba(255,255,255,0.04)",
-              opacity: 0.95,
-              fontSize: 13,
-            }}
-          >
-            <span
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: 99,
-                background: "var(--accent)",
-                boxShadow: "0 0 18px rgba(255,255,255,0.25)",
-              }}
-            />
-            <span>WIP • interactive physics models</span>
-          </div>
+          
 
           <h1 style={{ fontSize: 46, margin: "14px 0 8px", letterSpacing: -0.8, lineHeight: 1.05 }}>
             Visualise Science

@@ -108,9 +108,10 @@ a:hover{
 }
 
 /* Home page: remove the “tiny scroll” caused by bottom padding */
-.page.homeNoScroll{
+.homeNoScroll{
   min-height: 100dvh;
-  padding-bottom: 0;
+  box-sizing: border-box;
+  /* IMPORTANT: do NOT block vertical scroll */
 }
 
 /* --- Glass card --- */
