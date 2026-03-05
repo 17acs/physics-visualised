@@ -358,7 +358,7 @@ export default function SmallAnglePage() {
             </div>
 
             <p className="para" style={{ marginTop: 10 }}>
-              The point given by the pink circle is ({fmtSig(computed.ux, 3)}, {fmtSig(computed.uy, 3)}). sinθ is the y-coordinate and cosθ is the x-coordinate.
+              The point given by the pink circle is ({fmtSig(computed.ux, 3)}, {fmtSig(computed.uy, 3)}). cosθ is the y-coordinate and sinθ is the x-coordinate.
             </p>
           </div>
         </div>
