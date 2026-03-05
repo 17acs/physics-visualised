@@ -134,12 +134,12 @@ export default function Projectile3D(props: {
 
   return (
   <div
-    className="card"
-    style={{
-      height: "clamp(320px, 70vh, 820px)",
-      overflow: "hidden",
-    }}
-  >
+  className="card cardStrong"
+  style={{
+    height: "clamp(320px, 70vh, 820px)",
+    overflow: "hidden",
+  }}
+>
     <Canvas style={{ width: "100%", height: "100%" }} camera={{ position: camPos, fov: 45 }}>
       <Scene {...props} />
     </Canvas>

@@ -1,31 +1,88 @@
 :root{
-  --bg0:#05060a;
-  --bg1:#070b14;
-  --card:rgba(255,255,255,.035);
-  --border:rgba(255,255,255,.10);
-  --text:#f2f5ff;
-  --muted:rgba(242,245,255,.72);
+  /* Core palette */
+  --bg0:#070815;
+  --bg1:#03040d;
 
-  /* calm accents */
-  --accent:#7dd3fc;   /* soft cyan */
-  --accent2:#a78bfa;  /* soft violet */
-  --accent3:#fcd34d;  /* soft amber */
+  /* Glass surfaces */
+  --card: rgba(10, 12, 28, 0.42);
+  --card2: rgba(12, 14, 34, 0.55);
+  --border: rgba(255,255,255,0.14);
+
+  /* Text */
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.74);
+
+  /* Accents */
+  --accent:#7dd3fc;    /* cyan */
+  --accent2:#a78bfa;   /* violet */
+  --accent3:#ec4899;   /* pink */
+
+  /* Layout */
+  --pad: 18px;
+  --pad-sm: 14px;
+  --radius: 16px;
+
+  --shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
 
 html, body{
   height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 body{
-  margin: 0;
+  min-height: 100vh;
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* Font from layout.tsx */
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+
+  background-color: var(--bg1);
+
+  /* Background:
+     1) scrim behind hero (top-left)
+     2) tiny vignette
+     3) gentle overall darken
+     4) nebula image
+  */
+  background-image:
+    radial-gradient(900px 520px at 24% 18%, rgba(0,0,0,0.55), transparent 62%),
+    radial-gradient(1200px 900px at 50% 50%, rgba(0,0,0,0.00), rgba(0,0,0,0.45)),
+    linear-gradient(180deg, rgba(7,8,21,0.28) 0%, rgba(5,6,19,0.40) 60%, rgba(3,4,13,0.56) 100%),
+    url("/nebula.jpg");
+
+  background-size: cover, cover, cover, cover;
+  background-position: center, center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+
+  /* Pin the nebula without forcing the overlays to be fixed */
+  background-attachment: scroll, scroll, scroll, fixed;
+}
+
+/* Star speckle overlay */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
   background:
-    radial-gradient(900px 500px at 20% 10%, rgba(125,211,252,.12), transparent 55%),
-    radial-gradient(900px 500px at 80% 0%, rgba(167,139,250,.10), transparent 55%),
-    radial-gradient(900px 650px at 50% 100%, rgba(252,211,77,.06), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
-  background-attachment: fixed;
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(1px 1px at 35% 70%, rgba(255,255,255,0.45), transparent 60%),
+    radial-gradient(1px 1px at 75% 30%, rgba(255,255,255,0.40), transparent 60%),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.35), transparent 60%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.35), transparent 60%);
+  opacity: 0.24;
+  transform: scale(1.2);
+  filter: blur(0.2px);
+  z-index: 0;
+}
+
+/* Ensure app content renders above overlay */
+body > *{
+  position: relative;
+  z-index: 1;
 }
 
 a{
@@ -33,15 +90,8 @@ a{
   text-decoration: none;
 }
 a:hover{
-  color: rgba(125,211,252,.9);
+  color: rgba(125,211,252,.92);
   text-decoration: underline;
-}
-
-.card{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.55);
 }
 
 .muted{ color: var(--muted); }
@@ -57,15 +107,39 @@ a:hover{
   .page{ padding: 16px; }
 }
 
+/* Home page: remove the “tiny scroll” caused by bottom padding */
+.page.homeNoScroll{
+  min-height: 100dvh;
+  padding-bottom: 0;
+}
+
+/* --- Glass card --- */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  padding: var(--pad);
+}
+
+/* Stronger glass for dense UI (controls, boxes, graphs) */
+.cardStrong{
+  background: var(--card2);
+  border-color: rgba(255,255,255,0.16);
+}
+
+@media (max-width: 640px){
+  .card{ padding: var(--pad-sm); }
+}
+
 /* --- topic layout: 2 columns on desktop, 1 column on mobile/tablet --- */
 .topicGrid{
-  --aside: 560px; /* target width of right column on big screens */
+  --aside: 560px;
   display: grid;
   gap: 16px;
   align-items: start;
   margin-top: 16px;
-
-  /* right column shrinks on smaller desktop instead of dropping underneath */
   grid-template-columns: minmax(0, 1fr) clamp(320px, 42vw, var(--aside));
 }
 
@@ -75,15 +149,9 @@ a:hover{
   align-self: start;
 }
 
-/* only stack on genuinely small screens */
 @media (max-width: 900px){
-  .topicGrid{
-    grid-template-columns: 1fr;
-  }
-  .stickyCol{
-    position: static;
-    top: auto;
-  }
+  .topicGrid{ grid-template-columns: 1fr; }
+  .stickyCol{ position: static; top: auto; }
 }
 
 /* --- responsive SVG graphs that always fit their card --- */
@@ -91,7 +159,6 @@ a:hover{
   width: 100%;
   aspect-ratio: var(--ratio);
 }
-
 .graphBox > svg{
   width: 100%;
   height: 100%;
@@ -99,37 +166,19 @@ a:hover{
 }
 
 /* ---------- common spacing + typography ---------- */
-:root{
-  --pad: 18px;
-  --pad-sm: 14px;
-  --radius: 14px;
-}
-
-.card{
-  padding: var(--pad);
-}
-
-@media (max-width: 640px){
-  .card{ padding: var(--pad-sm); }
-}
-
 .h1{
   font-size: 28px;
   font-weight: 900;
   letter-spacing: -0.02em;
   margin: 0 0 10px 0;
 }
-
 .h2{
   font-size: 18px;
   font-weight: 900;
   letter-spacing: -0.01em;
   margin: 0;
 }
-
-.p{
-  margin: 10px 0 0 0;
-}
+.p{ margin: 10px 0 0 0; }
 
 /* ---------- clickable card links ---------- */
 .cardLink{
@@ -137,22 +186,15 @@ a:hover{
   color: inherit;
   text-decoration: none;
 }
-
-.cardLink:hover{
-  text-decoration: none; /* stop underline on hover */
-}
-
+.cardLink:hover{ text-decoration: none; }
 .cardLink .card{
   transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
 }
-
 .cardLink:hover .card{
   transform: translateY(-2px);
   border-color: rgba(125,211,252,.22);
-  background: rgba(255,255,255,.05);
+  background: rgba(255,255,255,.06);
 }
-
-/* keyboard accessibility */
 .cardLink:focus-visible .card{
   outline: 2px solid rgba(125,211,252,.55);
   outline-offset: 3px;
@@ -164,87 +206,116 @@ a:hover{
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  padding: 6px 0;
 }
 
 /* --- about / generic prose --- */
-.prose{
-  max-width: 800px;
-}
-
+.prose{ max-width: 800px; }
 .prose p{
   font-size: 18px;
   line-height: 1.7;
   margin: 0;
 }
+.stack{ display: grid; gap: 14px; }
+.stack12{ display:grid; gap:12px; }
 
-.stack{
-  display: grid;
-  gap: 14px;
+/* --- back link: pill globally --- */
+.backLink{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+}
+.backLink:hover{
+  text-decoration: none;
+  opacity: 0.9;
 }
 
-.backLink{
-  display: inline-block;
-  margin-bottom: 12px;
-  font-weight: 700;
+/* --- mini card links (for About / Browse / Featured) --- */
+.homeActions{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.miniCardLink{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  color: inherit;
+  text-decoration: none;
+  font-weight: 800;
+  backdrop-filter: blur(14px);
+  transition: transform .12s ease, border-color .12s ease, background-color .12s ease;
+}
+
+.miniCardLink:hover{
+  transform: translateY(-2px);
+  border-color: rgba(125,211,252,.22);
+  background: rgba(255,255,255,.06);
+  text-decoration: none;
+}
+
+.miniCardLinkBlock{
+  display: block;
+  padding: 14px;
 }
 
 /* --- topic homepage standard --- */
-.topicHeader{
-  padding: 18px;
-}
-
+.topicHeader{ padding: 18px; margin-top: 12px; }
 .topicHeaderTitle{
-  font-size: 28px;
+  margin:0;
+  font-size:34px;
   font-weight: 900;
   letter-spacing: -0.02em;
-  margin: 0;
 }
-
 .topicHeaderSub{
   margin-top: 8px;
   color: var(--muted);
   line-height: 1.6;
 }
-
 .cardGrid{
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin-top: 16px;
 }
-
 .cardTitle{
   font-size: 18px;
   font-weight: 900;
   margin: 0;
 }
-
 .cardSub{
   margin-top: 6px;
   color: var(--muted);
   line-height: 1.5;
 }
+
 /* ---- Photoelectric page polish ---- */
 .heroText{
   max-width: 980px;
   color: var(--muted);
   line-height: 1.7;
-  margin: 0;
+  margin: 10px 0 0;
+  opacity: .85;
+  font-size: 16px;
 }
 
-.sectionTitle{
-  font-weight: 900;
-  margin: 0 0 10px 0;
-}
-
-.cardPad{
-  padding: 14px;
-}
-
-.stack12{
-  display: grid;
-  gap: 12px;
-}
+.sectionTitle{ font-weight: 900; margin: 0 0 10px 0; }
+.cardPad{ padding: 14px; }
 
 .divider{
   height: 1px;
@@ -252,33 +323,21 @@ a:hover{
   margin: 12px 0;
 }
 
-.control{
-  margin-bottom: 12px;
-}
-
-.controlLabel{
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.controlRow{
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.range{
-  width: 100%;
-}
+.control{ margin-bottom: 12px; }
+.controlLabel{ font-weight: 800; margin-bottom: 6px; }
+.controlRow{ display: flex; gap: 12px; align-items: center; }
+.range{ width: 100%; }
 
 .numInput{
   width: 110px;
   padding: 8px 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(0,0,0,0.35);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.30);
   color: var(--text);
   outline: none;
+  backdrop-filter: blur(12px);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
 .numInput:focus{
@@ -286,19 +345,10 @@ a:hover{
   box-shadow: 0 0 0 3px rgba(125,211,252,.12);
 }
 
-.row{
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 6px 0;
-}
-
-.rowLabel{
-  font-weight: 800;
-}
+.rowLabel{ font-weight: 800; }
 
 .rowValue{
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   white-space: nowrap;
   overflow-x: auto;
   max-width: 65%;
@@ -307,7 +357,7 @@ a:hover{
 }
 
 .monoBlock{
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 13px;
   line-height: 1.6;
 }
@@ -339,36 +389,27 @@ a:hover{
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
   border-radius: inherit;
 }
-.microWindow{
-  height: 220px;
-}
 
+.microWindow{ height: 220px; }
 @media (max-width: 900px){
   .microWindow{ height: 200px; }
 }
-.backLink{
-  display:inline-block;
-  margin-bottom:12px;
-  text-decoration:none;
-}
 
-.topicHeader{ padding: 18px; margin-top: 12px; }
-.topicHeaderTitle{ margin:0; font-size:34px; }
-.heroText{ margin:10px 0 0; opacity:.85; max-width: 980px; line-height:1.6; font-size: 16px; }
-
-.stack12{ display:grid; gap:12px; }
-.cardPad{ padding:14px; }
-
-.sectionTitle{ font-weight:800; margin-bottom:10px; }
-.para{ margin: 0 0 10px; line-height:1.65; opacity:.88; }
 .eq{
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 14px;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.22);
   margin: 10px 0 14px;
   overflow-x: auto;
   white-space: nowrap;
+  backdrop-filter: blur(14px);
+}
+
+.para{ margin: 0 0 10px; line-height:1.65; opacity:.88; }
+
+:fullscreen{
+  background: var(--bg0);
 }

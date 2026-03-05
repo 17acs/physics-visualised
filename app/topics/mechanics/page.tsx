@@ -1,11 +1,16 @@
 export default function MechanicsPage() {
   const cards = [
-    {
-      title: "Projectile motion",
-      sub: "This should help with your three-pointers",
-      href: "/topics/mechanics/projectile",
-    },
-  ];
+  {
+    title: "Projectile motion",
+    sub: "This should help with your three-pointers",
+    href: "/topics/mechanics/projectile",
+  },
+  {
+    title: "Rolling wheel",
+    sub: "Why different points on a wheel have different ground speeds",
+    href: "/topics/mechanics/rolling-wheel",
+  },
+];
 
   return (
     <main className="page">

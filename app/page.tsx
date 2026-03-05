@@ -1,47 +1,39 @@
 export default function Home() {
   const updates = [
-  {
-    date: "3 Feb",
-    items: [
-      "Phase difference and superposition model added",
-      "I am aware the topic homepages do not follow the same format and am working on a css fix",
-    ],
-  },
-  {
-    date: "27 Jan",
-    items: [
-      "Improved compatibility for different screen sizes (mobile + laptops)",
-      "Inverse Square Law research project added",
-    ],
-  },
-];
+    {
+      date: "5th March",
+      items: [
+        "Mathematics page began",
+        "I am currently self-teaching angular velocity in order to model it",
+        "Astrophysics page delayed due to priorities elsewhere and self-teaching the physics behind it",
+      ],
+    },
+    {
+      date: "3 Feb",
+      items: [
+        "Phase difference and superposition model added",
+        "I am aware the topic homepages do not follow the same format and am working on a css fix",
+      ],
+    },
+    {
+      date: "27 Jan",
+      items: [
+        "Improved compatibility for different screen sizes (mobile + laptops)",
+        "Inverse Square Law research project added",
+      ],
+    },
+  ];
 
   return (
     <main
+      className="page homeNoScroll"
       style={{
-        padding: 32,
-        fontFamily: "system-ui",
-        minHeight: "100vh",
-        position: "relative",
-        overflow: "hidden",
+        boxSizing: "border-box",
+        minHeight: "100dvh",
+        paddingBottom: 0,
       }}
     >
-      {/* soft background glow */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: -200,
-          background:
-            "radial-gradient(600px 300px at 20% 10%, rgba(80,140,255,0.18), transparent 60%)," +
-            "radial-gradient(700px 350px at 80% 15%, rgba(255,80,180,0.14), transparent 60%)," +
-            "radial-gradient(800px 420px at 50% 90%, rgba(0,255,180,0.10), transparent 65%)",
-          filter: "blur(10px)",
-          zIndex: 0,
-        }}
-      />
-
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         {/* HERO */}
         <header style={{ marginBottom: 18 }}>
           <div
@@ -69,68 +61,32 @@ export default function Home() {
             <span>WIP • interactive physics models</span>
           </div>
 
-          <h1
-            style={{
-              fontSize: 46,
-              margin: "14px 0 8px",
-              letterSpacing: -0.8,
-              lineHeight: 1.05,
-            }}
-          >
-            physics visualised
+          <h1 style={{ fontSize: 46, margin: "14px 0 8px", letterSpacing: -0.8, lineHeight: 1.05 }}>
+            Visualise Science
           </h1>
 
-          <p style={{ fontSize: 16, opacity: 0.85, margin: 0 }}>by will king</p>
+          <p className="muted" style={{ fontSize: 16, margin: 0 }}>
+            by will king
+          </p>
 
-          <p
-            style={{
-              fontSize: 18,
-              maxWidth: 820,
-              marginTop: 14,
-              lineHeight: 1.65,
-              opacity: 0.9,
-            }}
-          >
-            WIP. Some aspects of the 3D modelling used AI to code. The rest of the website is
-            self-taught via youtube and google. See{" "}
-            <a href="/about" style={{ color: "var(--accent)", textDecoration: "underline" }}>
+          <p style={{ fontSize: 18, maxWidth: 820, marginTop: 14, lineHeight: 1.65, opacity: 0.9 }}>
+            WIP. Some aspects of the 3D modelling used AI to code. The rest of the website is self-taught via youtube and
+            google. See{" "}
+            <a href="/about" style={{ textDecoration: "underline" }}>
               about
             </a>{" "}
             for more.
           </p>
 
-          <div style={{ marginTop: 18, display: "flex", gap: 12, flexWrap: "wrap" }}>
-  <a
-    href="/about"
-    style={{
-      padding: "12px 16px",
-      borderRadius: 12,
-      background: "rgba(0,0,0,0.22)",
-      border: "1px solid rgba(255,255,255,0.12)",
-      textDecoration: "none",
-      color: "inherit",
-      fontWeight: 800,
-    }}
-  >
-    About →
-  </a>
-
-  <a
-    href="/topics"
-    style={{
-      padding: "12px 16px",
-      borderRadius: 12,
-      background: "rgba(0,0,0,0.22)",
-      border: "1px solid rgba(255,255,255,0.12)",
-      textDecoration: "none",
-      color: "inherit",
-      fontWeight: 800,
-    }}
-  >
-    Browse topics →
-  </a>
-</div>
-
+          {/* Buttons now match the “Featured” box style */}
+          <div className="homeActions">
+            <a href="/about" className="miniCardLink">
+              About →
+            </a>
+            <a href="/topics" className="miniCardLink">
+              Browse topics →
+            </a>
+          </div>
         </header>
 
         {/* CONTENT GRID */}
@@ -165,24 +121,9 @@ export default function Home() {
           <div className="card" style={{ padding: 16 }}>
             <h2 style={{ marginTop: 0, marginBottom: 10 }}>Featured</h2>
 
-            <a
-              href="/topics/waves/superposition"
-              style={{
-                display: "block",
-                textDecoration: "none",
-                color: "inherit",
-                padding: 14,
-                borderRadius: 14,
-                border: "1px solid rgba(255,255,255,0.10)",
-                background: "rgba(255,255,255,0.03)",
-              }}
-            >
-              <div style={{ fontWeight: 900, fontSize: 18, marginBottom: 6 }}>
-                Superposition
-              </div>
-              <div style={{ opacity: 0.85, lineHeight: 1.6 }}>
-                Wave interference.
-              </div>
+            <a href="/topics/waves/superposition" className="miniCardLink miniCardLinkBlock">
+              <div style={{ fontWeight: 900, fontSize: 18, marginBottom: 6 }}>Superposition</div>
+              <div style={{ opacity: 0.85, lineHeight: 1.6 }}>Wave interference.</div>
               <div style={{ marginTop: 10, color: "var(--accent)", fontWeight: 800 }}>Open →</div>
             </a>
           </div>

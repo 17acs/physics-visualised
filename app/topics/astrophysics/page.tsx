@@ -18,7 +18,7 @@ export default function AstrophysicsTopicPage() {
           Astrophysics
         </h1>
         <div className="topicHeaderSub" style={{ marginTop: 10, maxWidth: 820 }}>
-          Gravity, orbits, tides, black holes. Lit.
+          Gravity, orbits, tides, black holes. Pretty cool.
         </div>
       </div>
 
