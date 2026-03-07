@@ -21,6 +21,16 @@ export default function MathematicsTopic() {
             </div>
           </div>
         </a>
+
+        <a href="/topics/mathematics/calculus" className="cardLink">
+  <div className="card">
+    <div className="cardTitle">Calculus</div>
+    <div className="cardSub">
+      Visual models for derivatives, integrals, and how change builds up.
+    </div>
+  </div>
+</a>
+
       </div>
     </main>
   );
