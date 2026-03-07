@@ -26,7 +26,7 @@ export default function MathematicsTopic() {
   <div className="card">
     <div className="cardTitle">Calculus</div>
     <div className="cardSub">
-      Visual models for derivatives, integrals, and how change builds up.
+      Continuous change.
     </div>
   </div>
 </a>
