@@ -17,7 +17,7 @@ export default function MathematicsTopic() {
           <div className="card">
             <div className="cardTitle">Small-angle approximations</div>
             <div className="cardSub">
-              Compare sinθ, cosθ, tanθ with their approximations (θ in radians).
+              Compare trigonometric functions with their approximations.
             </div>
           </div>
         </a>
