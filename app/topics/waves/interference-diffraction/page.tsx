@@ -496,9 +496,7 @@ export default function InterferenceDiffractionPage() {
         >
           I always struggled to understand waves, so I modelled them here to the
           best of my ability. This page is primarily based on classical wave
-          equations I found on the double-slit experiment wikipedia page. In all
-          honesty, I only did the bare minimum of reading into waves for this
-          page - they hurt my head.
+          equations I found on the double-slit experiment wikipedia page.
         </p>
       </section>
 
