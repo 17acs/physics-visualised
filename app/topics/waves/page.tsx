@@ -2,8 +2,14 @@ export default function WavesTopicPage() {
   const cards = [
     {
       title: "Superposition",
-      sub: "Phase difference, interference, and resultant amplitude.",
+      sub: "Phase difference and resultant amplitude.",
       href: "/topics/waves/superposition",
+    },
+    
+    { 
+      title: "Diffraction and Interference",
+      sub: "Visualisation on waves colliding and diffracting",
+      href: "/topics/waves/interference-diffraction",
     },
   ];
 

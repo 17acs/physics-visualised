@@ -31,7 +31,6 @@ export default function Home() {
         {/* HERO */}
         <header style={{ marginBottom: 18 }}>
           
-
           <h1 style={{ fontSize: 46, margin: "14px 0 8px", letterSpacing: -0.8, lineHeight: 1.05 }}>
             Visualise Science
           </h1>
@@ -41,8 +40,7 @@ export default function Home() {
           </p>
 
           <p style={{ fontSize: 18, maxWidth: 820, marginTop: 14, lineHeight: 1.65, opacity: 0.9 }}>
-            WIP. Some aspects of the 3D modelling used AI to code. The rest of the website is self-taught via youtube and
-            google. See{" "}
+            Interactive visualisations. See{" "}
             <a href="/about" style={{ textDecoration: "underline" }}>
               about
             </a>{" "}
