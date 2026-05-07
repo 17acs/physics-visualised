@@ -8,7 +8,7 @@ export default function MathematicsTopic() {
       <div className="card topicHeader">
         <h1 className="topicHeaderTitle">Mathematics</h1>
         <div className="topicHeaderSub">
-          What did the drowning number theorist say? Log log log log
+          
         </div>
       </div>
 
@@ -23,14 +23,22 @@ export default function MathematicsTopic() {
         </a>
 
         <a href="/topics/mathematics/calculus" className="cardLink">
-  <div className="card">
-    <div className="cardTitle">Calculus</div>
-    <div className="cardSub">
-      Continuous change.
-    </div>
-  </div>
-</a>
+          <div className="card">
+            <div className="cardTitle">Calculus</div>
+            <div className="cardSub">
+              Continuous change.
+            </div>
+          </div>
+        </a>
 
+        <a href="/topics/mathematics/matrix-visualiser" className="cardLink">
+          <div className="card">
+            <div className="cardTitle">Matrix Transformations & Determinants</div>
+            <div className="cardSub">
+              2x2 Matrix transformations
+            </div>
+          </div>
+        </a>
       </div>
     </main>
   );
