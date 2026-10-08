@@ -31,7 +31,7 @@ export default function SuperpositionPage() {
             <b>Wave 2</b>: amplitude of wave 2.
           </li>
           <li>
-            <b>Phase (φ)</b>: the phase difference — controls the shift of wave 2 compared to wave 1. It is assumed you have a pretty decent understanding of phase difference already.
+            <b>Phase (φ)</b>: the phase difference - controls the shift of wave 2 compared to wave 1. It is assumed you have a pretty decent understanding of phase difference already.
           </li>
         </ul>
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 function fmt(n: number, dp = 2) {
-  return Number.isFinite(n) ? n.toFixed(dp) : "—";
+  return Number.isFinite(n) ? n.toFixed(dp) : "-";
 }
 function deg(rad: number) {
   return (rad * 180) / Math.PI;

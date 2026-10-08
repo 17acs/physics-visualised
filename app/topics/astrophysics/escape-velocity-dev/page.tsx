@@ -9,12 +9,12 @@ function clamp(n: number, a: number, b: number) {
 }
 
 function fmt(n: number, dp = 2) {
-  if (!Number.isFinite(n)) return "—";
+  if (!Number.isFinite(n)) return "-";
   return n.toFixed(dp);
 }
 
 function sci(n: number, sig = 3) {
-  if (!Number.isFinite(n)) return "—";
+  if (!Number.isFinite(n)) return "-";
   if (n === 0) return "0";
   const exp = Math.floor(Math.log10(Math.abs(n)));
   const mant = n / Math.pow(10, exp);

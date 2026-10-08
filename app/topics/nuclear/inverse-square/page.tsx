@@ -212,7 +212,7 @@ After struggling to understand how the equation accounts for only a portion of t
 
             </div>
             <div className="muted" style={{ fontSize: 12, marginTop: 10 }}>
-  (r₀/r)² is the scale factor vs the reference distance r₀ — e.g. 0.06 means the reading is 6% of what it was at r₀. These equations are made by me.
+  (r₀/r)² is the scale factor vs the reference distance r₀ - e.g. 0.06 means the reading is 6% of what it was at r₀. These equations are made by me.
   They follow: D(r)=D0(r0/r)² where D(r) is the dose rate for radius r, r0 is the example distance and r is the new distance you decide. This is to make the law clearer.
 </div>
 
@@ -266,9 +266,9 @@ After struggling to understand how the equation accounts for only a portion of t
 
             <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
 
-            <Row label="Last N (counts)" value={last ? String(last.N) : "—"} />
-            <Row label="Last C = N/T" value={last ? `${last.C.toFixed(2)} s⁻¹` : "—"} />
-            <Row label="Last Counts from source = Total - background" value={last ? `${last.Cnet.toFixed(2)} s⁻¹` : "—"} />
+            <Row label="Last N (counts)" value={last ? String(last.N) : "-"} />
+            <Row label="Last C = N/T" value={last ? `${last.C.toFixed(2)} s⁻¹` : "-"} />
+            <Row label="Last Counts from source = Total - background" value={last ? `${last.Cnet.toFixed(2)} s⁻¹` : "-"} />
 
             <div style={{ height: 1, background: "rgba(255,255,255,0.10)", margin: "12px 0" }} />
 

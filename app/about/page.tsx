@@ -14,7 +14,7 @@ export default function AboutPage() {
         </p>
 
         <p>
-          The foundation of the site has been built by me (it’s basic for now — I’ll polish it).
+          The foundation of the site has been built by me (it’s basic for now - I’ll polish it).
           Some complex parts (e.g. 3D visuals and a few nuclear equations) were assisted via AI and code-sharing
           sources like GitHub.
         </p>
