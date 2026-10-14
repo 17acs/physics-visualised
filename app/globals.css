@@ -414,6 +414,105 @@ a:hover{
   backdrop-filter: blur(14px);
 }
 
+.eq.mathEq{
+  font-family: ui-serif, "Times New Roman", "STIX Two Text", serif;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  white-space: nowrap;
+  line-height: 1.4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 4.25rem;
+  padding: 1.1rem 1.35rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+.eq.mathEq .mathEqInner{
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content;
+  max-width: none;
+  flex-shrink: 0;
+  padding: 0.15rem 0.35rem;
+}
+
+.eq.mathEq .mathIntegralLimits{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.2em;
+  padding: 0.15em 0.1em;
+  flex-shrink: 0;
+}
+
+.eq.mathEq .mathIntegralLimit{
+  font-size: 0.7em;
+  line-height: 1.15;
+}
+
+.eq.mathEq .mathIntegralSign{
+  font-size: 1.45em;
+  line-height: 1;
+  padding: 0.12em 0;
+  display: block;
+}
+
+.mathEqStack .eq.mathEq{
+  margin: 0;
+}
+
+.mathEqStack .eq.mathEq + .eq.mathEq{
+  margin-top: 10px;
+}
+
+.mathEqOr{
+  text-align: center;
+  font-style: italic;
+  opacity: 0.72;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.mathEqLegend{
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.16);
+  font-family: ui-serif, "Times New Roman", "STIX Two Text", serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.mathEqLegendRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+  padding: 4px 0;
+}
+
+.mathEqLegendRow + .mathEqLegendRow{
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.mathEqLegendLabel{
+  min-width: 3.25rem;
+  font-weight: 700;
+  opacity: 0.92;
+}
+
+.mathEqLegendItems{
+  opacity: 0.9;
+}
+
 .para{ margin: 0 0 10px; line-height:1.65; opacity:.88; }
 
 :fullscreen{

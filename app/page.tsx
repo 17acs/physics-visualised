@@ -1,6 +1,10 @@
 export default function Home() {
   const updates = [
     {
+      date: "8th October",
+      items: ["More work on mathematics page"],
+    },
+    {
       date: "5th March",
       items: [
         "Mathematics page began",
