@@ -26,6 +26,16 @@ export default function CalculusPage() {
             </p>
           </Link>
 
+          <Link
+            href="/topics/mathematics/calculus/mid-ordinate-rule"
+            className="card cardLink"
+          >
+            <div className="cardTitle">Mid-ordinate rule</div>
+            <p className="cardSub">
+              Rectangles from the middle of each strip.
+            </p>
+          </Link>
+
           <div className="card">
             <div className="cardTitle">Integrals</div>
             <p className="cardSub">Coming soon.</p>
