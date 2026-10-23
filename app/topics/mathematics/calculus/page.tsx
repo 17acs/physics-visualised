@@ -26,6 +26,16 @@ export default function CalculusPage() {
             </p>
           </Link>
 
+          <Link
+            href="/topics/mathematics/calculus/trapezium-rule"
+            className="card cardLink"
+          >
+            <div className="cardTitle">Trapezium rule</div>
+            <p className="cardSub">
+              Straight lines between sample heights.
+            </p>
+          </Link>
+
           <div className="card">
             <div className="cardTitle">Integrals</div>
             <p className="cardSub">Coming soon.</p>
