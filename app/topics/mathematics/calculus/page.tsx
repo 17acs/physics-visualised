@@ -26,36 +26,6 @@ export default function CalculusPage() {
             </p>
           </Link>
 
-          <Link
-            href="/topics/mathematics/calculus/simpsons-rule"
-            className="card cardLink"
-          >
-            <div className="cardTitle">Simpson&apos;s rule</div>
-            <p className="cardSub">
-              Numerical integration with parabolic panels.
-            </p>
-          </Link>
-
-          <Link
-            href="/topics/mathematics/calculus/trapezium-rule"
-            className="card cardLink"
-          >
-            <div className="cardTitle">Trapezium rule</div>
-            <p className="cardSub">
-              Straight lines between sample heights.
-            </p>
-          </Link>
-
-          <Link
-            href="/topics/mathematics/calculus/mid-ordinate-rule"
-            className="card cardLink"
-          >
-            <div className="cardTitle">Mid-ordinate rule</div>
-            <p className="cardSub">
-              Rectangles from the middle of each strip.
-            </p>
-          </Link>
-
           <div className="card">
             <div className="cardTitle">Integrals</div>
             <p className="cardSub">Coming soon.</p>
