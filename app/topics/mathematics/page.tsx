@@ -13,6 +13,15 @@ export default function MathematicsTopic() {
       </div>
 
       <div className="cardGrid">
+        <a href="/topics/mathematics/simplex" className="cardLink">
+          <div className="card">
+            <div className="cardTitle">Simplex and optimisation</div>
+            <div className="cardSub">
+              How the simplex tableau walks a linear program from corner to corner.
+            </div>
+          </div>
+        </a>
+
         <a href="/topics/mathematics/small-angle" className="cardLink">
           <div className="card">
             <div className="cardTitle">Small-angle approximations</div>
