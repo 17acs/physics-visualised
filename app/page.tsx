@@ -91,9 +91,11 @@ export default function Home() {
           <div className="card" style={{ padding: 16 }}>
             <h2 style={{ marginTop: 0, marginBottom: 10 }}>Featured</h2>
 
-            <a href="/topics/waves/superposition" className="miniCardLink miniCardLinkBlock">
-              <div style={{ fontWeight: 900, fontSize: 18, marginBottom: 6 }}>Superposition</div>
-              <div style={{ opacity: 0.85, lineHeight: 1.6 }}>Wave interference.</div>
+            <a href="/topics/mathematics/maclaurin" className="miniCardLink miniCardLinkBlock">
+              <div style={{ fontWeight: 900, fontSize: 18, marginBottom: 6 }}>Maclaurin series</div>
+              <div style={{ opacity: 0.85, lineHeight: 1.6 }}>
+                Rebuild a function from its derivatives at zero.
+              </div>
               <div style={{ marginTop: 10, color: "var(--accent)", fontWeight: 800 }}>Open →</div>
             </a>
           </div>
