@@ -1,6 +1,10 @@
 export default function Home() {
   const updates = [
     {
+      date: "25th October",
+      items: ["Maclaurin series page"],
+    },
+    {
       date: "8th October",
       items: ["More work on mathematics page"],
     },
@@ -17,13 +21,6 @@ export default function Home() {
       items: [
         "Phase difference and superposition model added",
         "I am aware the topic homepages do not follow the same format and am working on a css fix",
-      ],
-    },
-    {
-      date: "27 Jan",
-      items: [
-        "Improved compatibility for different screen sizes (mobile + laptops)",
-        "Inverse Square Law research project added",
       ],
     },
   ];

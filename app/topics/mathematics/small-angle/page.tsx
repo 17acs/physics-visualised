@@ -183,6 +183,10 @@ export default function SmallAnglePage() {
           Everything is in <b>radians</b>.
           {mode === "tan" ? `  (Tan graph has smaller x-axis to avoid undefined values)` : ""}
         </p>
+        <p className="heroText" style={{ margin: 0 }}>
+          y = x is the first term of the{" "}
+          <a href="/topics/mathematics/maclaurin">Maclaurin series</a> for sin x.
+        </p>
       </div>
 
       <div className="topicGrid" style={{ ["--aside" as any]: "560px" }}>
