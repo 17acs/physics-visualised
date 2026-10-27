@@ -1,6 +1,10 @@
 export default function Home() {
   const updates = [
     {
+      date: "27th October",
+      items: ["Simpson's rule page"],
+    },
+    {
       date: "25th October",
       items: ["Maclaurin series page"],
     },
