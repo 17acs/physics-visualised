@@ -155,9 +155,23 @@ a:hover{
   align-self: start;
 }
 
+.simpsonPlot{ --ratio: 900 / 320; }
+.simpsonGap{ --ratio: 1400 / 190; }
+
 @media (max-width: 900px){
   .topicGrid{ grid-template-columns: 1fr; }
   .stickyCol{ position: static; top: auto; }
+  .simpsonPlot{ --ratio: 900 / 420; }
+  .simpsonGap{ --ratio: 900 / 200; }
+}
+
+.deeperColumns{
+  display: grid;
+  gap: 10px 28px;
+  margin-top: 10px;
+}
+@media (min-width: 860px){
+  .deeperColumns{ grid-template-columns: 1fr 1fr; align-items: start; }
 }
 
 /* --- responsive SVG graphs that always fit their card --- */
@@ -464,6 +478,9 @@ a:hover{
 
 .mathEqStack .eq.mathEq{
   margin: 0;
+  min-height: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .mathEqStack .eq.mathEq + .eq.mathEq{
@@ -514,6 +531,24 @@ a:hover{
 }
 
 .para{ margin: 0 0 10px; line-height:1.65; opacity:.88; }
+
+.choiceBtn{
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.choiceBtn[aria-pressed="true"]{
+  border-color: rgba(125,211,252,0.55);
+  background: rgba(125,211,252,0.12);
+}
+.choiceBtn:focus-visible{
+  outline: 2px solid rgba(125,211,252,0.7);
+  outline-offset: 2px;
+}
 
 :fullscreen{
   background: var(--bg0);

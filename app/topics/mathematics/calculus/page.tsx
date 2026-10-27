@@ -32,7 +32,7 @@ export default function CalculusPage() {
           >
             <div className="cardTitle">Simpson&apos;s rule</div>
             <p className="cardSub">
-              Numerical integration with parabolic panels.
+              Fit a parabola across each pair of strips.
             </p>
           </Link>
 

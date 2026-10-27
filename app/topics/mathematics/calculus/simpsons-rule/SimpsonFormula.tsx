@@ -82,49 +82,7 @@ export function SimpsonsRuleFormula() {
         <Frac num="h" den="3" />
         <span style={{ marginLeft: "0.15em" }}>[ ends + 4(odds) + 2(evens) ]</span>
       </MathEqRow>
-
-      <div className="mathEqLegend">
-        <div className="mathEqLegendRow">
-          <span className="mathEqLegendLabel">ends</span>
-          <span className="mathEqLegendItems">
-            f(x<Sub>0</Sub>), f(x<Sub>n</Sub>)
-          </span>
-        </div>
-        <div className="mathEqLegendRow">
-          <span className="mathEqLegendLabel">odds</span>
-          <span className="mathEqLegendItems">
-            f(x<Sub>1</Sub>), f(x<Sub>3</Sub>), f(x<Sub>5</Sub>), … , f(x<Sub>n−1</Sub>)
-          </span>
-        </div>
-        <div className="mathEqLegendRow">
-          <span className="mathEqLegendLabel">evens</span>
-          <span className="mathEqLegendItems">
-            f(x<Sub>2</Sub>), f(x<Sub>4</Sub>), f(x<Sub>6</Sub>), … , f(x<Sub>n−2</Sub>)
-          </span>
-        </div>
-      </div>
     </div>
   );
 }
 
-export function SimpsonsWorkedExample() {
-  return (
-    <div className="eq mathEq" style={mathStyle}>
-      <span className="mathEqInner">
-        <IntegralFromTo a="0" b="2" integrand={<span>x² dx</span>} />
-        <span style={{ margin: "0 0.35em" }}>≈</span>
-        <Frac num="0.5" den="3" />
-        <span style={{ margin: "0 0.2em" }}>[0 + 4(0.25) + 2(1) + 4(2.25) + 4] =</span>
-        <Frac num="8" den="3" />
-      </span>
-    </div>
-  );
-}
-
-export function SimpsonsRuleFormulaCompact() {
-  return (
-    <span style={{ ...mathStyle, fontSize: "1.05rem" }}>
-      <IntegralFromTo a="a" b="b" integrand={<span>f(x) d x</span>} />
-    </span>
-  );
-}
