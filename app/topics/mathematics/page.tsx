@@ -22,6 +22,15 @@ export default function MathematicsTopic() {
           </div>
         </a>
 
+        <a href="/topics/mathematics/maclaurin" className="cardLink">
+          <div className="card">
+            <div className="cardTitle">Maclaurin series</div>
+            <div className="cardSub">
+              Rebuild a function from its derivatives at zero.
+            </div>
+          </div>
+        </a>
+
         <a href="/topics/mathematics/calculus" className="cardLink">
           <div className="card">
             <div className="cardTitle">Calculus</div>

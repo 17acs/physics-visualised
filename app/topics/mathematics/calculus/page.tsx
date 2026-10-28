@@ -26,6 +26,16 @@ export default function CalculusPage() {
             </p>
           </Link>
 
+          <Link
+            href="/topics/mathematics/calculus/simpsons-rule"
+            className="card cardLink"
+          >
+            <div className="cardTitle">Simpson&apos;s rule</div>
+            <p className="cardSub">
+              Fit a parabola across each pair of strips.
+            </p>
+          </Link>
+
           <div className="card">
             <div className="cardTitle">Integrals</div>
             <p className="cardSub">Coming soon.</p>

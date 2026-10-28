@@ -1,58 +1,56 @@
-# Page brief: Argand diagram
+# Page brief: Maclaurin series
 
-For the agent building the `argand-diagram` branch. This file is not site content. Do not link it from a page, and do not print the specification codes on the page.
+For the agent building the `maclaurin-series` branch. This file is not site content. Do not link it from a page, and do not print the specification codes on the page.
 
 ## Idea
 
-A draggable Argand diagram. A-level students meet complex numbers as algebra. The marks on this part of the paper are for reading a picture: modulus, argument, what multiplication does, and loci.
+Plot a function and a partial sum of its Maclaurin series on the same axes. A slider adds terms. The student should see the gap close, and see where adding terms makes it worse.
 
-AQA Further Mathematics 7367, compulsory pure, section B:
+The small-angle page is the first term of this. sin θ ≈ θ is the one-term polynomial for sin. Say that, and link to `/topics/mathematics/small-angle`.
 
-- B4 Argand diagrams
-- B5 Cartesian form and modulus-argument form
-- B6 multiplication and division in modulus-argument form
-- B7 loci such as |z − a| = r and arg(z − a) = θ
-- B10 the n distinct nth roots are the vertices of a regular n-gon
+AQA Further Mathematics 7367, section D:
 
-Multiplication here is the same idea as the matrix page. Multiplying by i is a rotation by π/2 with modulus unchanged, which that page already draws as the matrix with columns (0, 1) and (−1, 0). Say so in a sentence on this page. Do not rebuild the matrix visualiser.
+- D5 Maclaurin series, including the general term
+- D6 the series for e^x, ln(1+x), sin x, cos x, and (1+x)^n, and the values of x for which they are valid. Proof is not required.
 
 ## Where it goes
 
-- Page: `app/topics/mathematics/argand-diagram/page.tsx`
-- Card on `app/topics/mathematics/page.tsx`, next to Matrix Transformations.
-- Title: Argand diagram
-- Subtitle: Multiplication, loci, and roots on the complex plane.
+- Page: `app/topics/mathematics/maclaurin/page.tsx`
+- Card on `app/topics/mathematics/page.tsx`.
+- Title: Maclaurin series
+- Subtitle: Partial sums against the function, and where they stop matching.
+- On the small-angle page, add one sentence and a link here. Do not change that page's graph.
 
 ## What the student does
 
-One diagram, four tabs.
+Pick a function. The slider sets how many terms are drawn. Plot f and the partial sum together. The gap between the curves is the point of the page.
 
-1. One number. Drag z. Show x + iy, the modulus, and the principal argument in radians, with −π < Arg z ≤ π. The negative real axis is the branch cut: the argument jumps when the point crosses it. Show the jump.
+Use these series. Do not add others.
 
-2. Multiplication. A second number w, with presets for i (rotate by π/2), 2 (enlarge, argument unchanged), and a general modulus and argument. Draw z, w, and zw. Arguments add, then fold back into (−π, π]. Moduli multiply. One division example is enough: arguments subtract, moduli divide. w = 0 is undefined.
+- e^x = Σ x^k / k! from k = 0. Valid for every real x.
+- sin x = x − x^3/3! + x^5/5! − … Valid for every real x.
+- cos x = 1 − x^2/2! + x^4/4! − … Valid for every real x.
+- ln(1+x) = x − x^2/2 + x^3/3 − … Valid for −1 < x ≤ 1. It diverges for x ≤ −1. At x = 1 the sum is ln 2.
+- (1+x)^n = 1 + nx + n(n−1)/2! x^2 + … When n is a positive integer the series stops after n + 1 terms and is valid for every real x. Otherwise the range to show is |x| < 1. Do not mark the endpoints ±1 as always divergent: that depends on n, and the specification's range is |x| < 1.
 
-3. Loci and roots.
-   - |z − a| = r is the circle, centre a, radius r. The boundary is included.
-   - |z − a| < r is the open disk. |z − a| > r is the outside. The boundary is not included in either inequality.
-   - arg(z − a) = θ is a half-line starting at a, not a full line. The point z = a is not on it, because arg 0 is undefined.
-   - The n nth roots of a fixed number, n from 2 to 8, as the vertices of a regular n-gon. Include the roots of unity, with one vertex at 1. The roots of re^{iθ} are r^{1/n} exp(i(θ + 2πk)/n) for k = 0, …, n − 1.
+For ln(1+x), and for a non-integer power, mark the valid interval on the axis. Inside it, more terms close the gap. Outside it, more terms make the gap worse. That contrast is the page.
 
-Dragging a, and sliders for r, θ, and n, should move the picture. A finished sketch is the thing this page replaces.
+For sin x, one term is the line y = x. That is the small-angle picture.
 
-4. Proofs. Static tab: why |zw| = |z||w| and Arg(zw) = Arg z + Arg w (with principal-value folding), and the same for division when w ≠ 0. Use the trig expansion or modulus-argument form; keep it A-level length. Link multiplying by i to the matrix page in one sentence.
+Show the general term as a line of text beside the chosen function. Do not derive it.
 
 ## Leave out
 
-Solving quadratics, cubics, and quartics. Conjugate pairs as an algebra exercise. De Moivre and sums of series. Eigenvectors.
+Limits and l'Hôpital. Taylor series about a point other than 0. Remainder formulae. A proof.
 
 ## How to build it
 
-Client component, SVG, in the style of `app/topics/mathematics/calculus/derivatives/page.tsx` and `app/topics/mathematics/small-angle/page.tsx`. Use the existing classes: `page`, `card`, `topicHeader`, `cardGrid`, `backLink`, `cardTitle`, `cardSub`. No new dependency.
+Client component, SVG, in the style of `app/topics/mathematics/calculus/derivatives/page.tsx`. Use the existing classes: `page`, `card`, `topicHeader`, `cardGrid`, `backLink`, `cardTitle`, `cardSub`. No new dependency.
 
-Page copy should sound like the other cards: short and plain. Angles in radians.
+Build each term from a running product. Do not compute a large factorial in floating point and then divide. Eight terms is enough on the slider for e^x, sin x, and cos x. Allow more for ln(1+x): it converges slowly near the ends of the interval. Keep the slider inside a range you have checked for overflow.
 
-This branch is `main` plus this brief. Simpson's rule is not on it. Leave that alone.
+Page copy stays short and plain. This branch is `main` plus this brief. Simpson's rule is not on it. Leave that alone.
 
 `npm run dev` serves http://localhost:3001.
 
-Check in the browser: drag a point across the negative real axis, multiply by i, and count the roots for n = 3 and n = 4.
+Check in the browser: sin x with one term is y = x. More terms of e^x settle on both sides of the origin. ln(1+x) settles on (−1, 1] and pulls away for x > 1 and for x ≤ −1.
