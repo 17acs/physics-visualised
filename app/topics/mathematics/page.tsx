@@ -39,6 +39,15 @@ export default function MathematicsTopic() {
             </div>
           </div>
         </a>
+
+        <a href="/topics/mathematics/argand-diagram" className="cardLink">
+          <div className="card">
+            <div className="cardTitle">Argand diagram</div>
+            <div className="cardSub">
+              Multiplication, loci, and roots on the complex plane.
+            </div>
+          </div>
+        </a>
       </div>
     </main>
   );

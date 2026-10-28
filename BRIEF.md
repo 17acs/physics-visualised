@@ -25,7 +25,7 @@ Multiplication here is the same idea as the matrix page. Multiplying by i is a r
 
 ## What the student does
 
-One diagram, three modes.
+One diagram, four tabs.
 
 1. One number. Drag z. Show x + iy, the modulus, and the principal argument in radians, with −π < Arg z ≤ π. The negative real axis is the branch cut: the argument jumps when the point crosses it. Show the jump.
 
@@ -38,6 +38,8 @@ One diagram, three modes.
    - The n nth roots of a fixed number, n from 2 to 8, as the vertices of a regular n-gon. Include the roots of unity, with one vertex at 1. The roots of re^{iθ} are r^{1/n} exp(i(θ + 2πk)/n) for k = 0, …, n − 1.
 
 Dragging a, and sliders for r, θ, and n, should move the picture. A finished sketch is the thing this page replaces.
+
+4. Proofs. Static tab: why |zw| = |z||w| and Arg(zw) = Arg z + Arg w (with principal-value folding), and the same for division when w ≠ 0. Use the trig expansion or modulus-argument form; keep it A-level length. Link multiplying by i to the matrix page in one sentence.
 
 ## Leave out
 
